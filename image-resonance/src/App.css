@@ -1,0 +1,116 @@
+/* ===== 应用布局微交互 ===== */
+
+/* 视图切换过渡 */
+.app-content {
+  transition: opacity 0.15s ease;
+}
+
+/* 面板滑入动画 */
+@keyframes panelSlideIn {
+  from { opacity: 0; transform: translateX(-12px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.panel-enter {
+  animation: panelSlideIn 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 加载占位 */
+.canvas-loading {
+  display: flex; align-items: center; justify-content: center;
+  flex: 1;
+  color: var(--color-text-secondary);
+  font-size: 13px;
+  letter-spacing: 0.02em;
+}
+
+/* 错误边界 */
+.error-boundary {
+  padding: 40px;
+  font-family: var(--font-sans);
+  text-align: center;
+}
+.error-boundary h2 {
+  color: var(--color-danger);
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+.error-boundary pre {
+  background: var(--color-elevated);
+  padding: 16px;
+  border-radius: 10px;
+  font-size: 13px;
+  overflow: auto;
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  max-width: 560px;
+  margin: 0 auto;
+  text-align: left;
+}
+.error-boundary p {
+  color: var(--color-text-secondary);
+  font-size: 13px;
+  margin-top: 12px;
+}
+
+/* 工具栏分割线 */
+.toolbar-divider {
+  width: 1px; height: 24px;
+  background: var(--color-border);
+  border-radius: 1px;
+}
+
+/* 场景名称编辑 */
+.scene-name-display {
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+  color: var(--color-text);
+  max-width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.scene-name-display:hover {
+  color: var(--color-primary-light);
+  background: rgba(123, 155, 255, 0.06);
+}
+.scene-name-input {
+  font-size: 15px;
+  font-weight: 500;
+  padding: 4px 8px;
+  width: 180px;
+  border: 1px solid var(--color-primary);
+  border-radius: 6px;
+  outline: none;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  box-shadow: 0 0 0 3px rgba(123, 155, 255, 0.12);
+}
+
+/* Color picker */
+input[type="color"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 26px; height: 26px;
+  border-radius: 8px;
+  border: 2px solid var(--color-border);
+  cursor: pointer;
+  padding: 1px;
+  background: var(--color-surface);
+  transition: border-color 0.15s ease;
+}
+input[type="color"]:hover {
+  border-color: var(--color-accent);
+}
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+input[type="color"]::-webkit-color-swatch {
+  border-radius: 5px;
+  border: none;
+}

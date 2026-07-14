@@ -1,0 +1,36 @@
+{
+  "name": "image-resonance-server",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "migrate": "tsx src/db/migrate.ts",
+    "migrate:backup": "tsx scripts/migrate-backup.ts"
+  },
+  "dependencies": {
+    "adm-zip": "^0.5.17",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "drizzle-orm": "^0.44.0",
+    "express": "^5.1.0",
+    "helmet": "^8.0.0",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.2",
+    "mysql2": "^3.14.0",
+    "sharp": "^0.34.0"
+  },
+  "devDependencies": {
+    "@types/adm-zip": "^0.5.8",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.1",
+    "@types/morgan": "^1.9.9",
+    "@types/multer": "^1.4.12",
+    "@types/node": "^24.12.3",
+    "drizzle-kit": "^0.31.0",
+    "tsx": "^4.19.0",
+    "typescript": "~6.0.2"
+  }
+}
